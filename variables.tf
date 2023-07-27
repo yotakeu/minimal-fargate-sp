@@ -40,7 +40,8 @@ variable "prefix" {
   default = "test"
 }
 
-# Curlコマンドで疑似アタックを実行するターミナルのIPアドレスを入力してください
+# Curlコマンドを打って疑似アタックを実行する端末のIPアドレスを入力してください
+# このIPアドレスからWorkloadタスクに対する8080ポート接続を許可するSecurity Group設定を作成します
 variable "source_ip" {
   default = "192.168.0.100/32"
 }
