@@ -15,6 +15,11 @@ variable "subnet_b_id" {
   default = "subnet-xxxxxxxxxxxx"
 }
 
+# タスクにPublic IPをアサインするか否か。Private Subnetにデプロイする場合はfalseに設定してください
+variable "public_ip" {
+  default = "true"
+}
+
 # Sysdig Access key
 variable "access_key" {
   default = ""
