@@ -13,7 +13,7 @@ data "sysdig_fargate_workload_agent" "containers_instrumented" {
         },
         {
           "name": "SYSDIG_LOGGING",
-          "value": "debug"
+          "value": "info"
         }
       ],
       "logConfiguration" : {
