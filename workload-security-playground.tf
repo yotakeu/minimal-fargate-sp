@@ -43,6 +43,7 @@ resource "aws_ecs_task_definition" "task_definition" {
   memory                   = "2048"
   network_mode             = "awsvpc"
   requires_compatibilities = ["FARGATE"]
+  pid_mode                 = "task"
 
   container_definitions = data.sysdig_fargate_workload_agent.containers_instrumented.output_container_definitions
 }
