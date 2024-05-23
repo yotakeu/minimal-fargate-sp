@@ -25,19 +25,9 @@ variable "access_key" {
   default = ""
 }
 
-# Sysdig Secure API Token
-variable "secure_api_token" {
-  default = ""
-}
-
 # ご自身のSysdig SaaSリージョンの値を入力してください（下記はus4の場合）
 variable "collector_url" {
   default = "ingest.us4.sysdig.com"
-}
-
-# ご自身のSysdig SaaSリージョンの値を入力してください（下記はus4の場合）
-variable "sysdig_secure_url" {
-  default = "https://app.us4.sysdig.com"
 }
 
 # タスク名などの前につけるプレフィックス
