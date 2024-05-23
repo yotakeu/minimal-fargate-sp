@@ -10,8 +10,3 @@ terraform {
     }
   }
 }
-
-provider "sysdig" {
-  sysdig_secure_url       = "${var.sysdig_secure_url}"
-  sysdig_secure_api_token = "${var.secure_api_token}"
-}
