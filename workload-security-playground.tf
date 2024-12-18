@@ -30,8 +30,8 @@ data "sysdig_fargate_workload_agent" "containers_instrumented" {
   workload_agent_image = "quay.io/sysdig/workload-agent:latest"
 
   sysdig_access_key = var.access_key
-  orchestrator_host = module.fargate-orchestrator-agent.orchestrator_host
-  orchestrator_port = module.fargate-orchestrator-agent.orchestrator_port
+  collector_host = var.collector_url
+  collector_port = 6443
 }
 
 resource "aws_ecs_task_definition" "task_definition" {
@@ -128,7 +128,7 @@ resource "aws_security_group_rule" "security_playground_ingress_rule" {
   security_group_id = aws_security_group.security_group.id
 }
 
-resource "aws_security_group_rule" "orchestrator_agent_egress_rule" {
+resource "aws_security_group_rule" "workload_agent_egress_rule" {
   type              = "egress"
   protocol          = "all"
   from_port         = 0
