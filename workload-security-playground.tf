@@ -32,6 +32,12 @@ data "sysdig_fargate_workload_agent" "containers_instrumented" {
   sysdig_access_key = var.access_key
   collector_host = var.collector_url
   collector_port = 6443
+ 
+  log_configuration {
+  group         = aws_cloudwatch_log_group.instrumented_logs.name
+  stream_prefix = "instrumentation"
+  region        = var.region
+  }
 }
 
 resource "aws_ecs_task_definition" "task_definition" {
